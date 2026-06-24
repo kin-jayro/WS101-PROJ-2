@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Login Page</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+
+    body {
+      margin: 0;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      background-image: url("bg-login-img.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+
+      opacity: 0.3;
+      z-index: -1;
+    }
+
+    .header {
+      background: #1abc9c;
+      color: white;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    .header h1 {
+      margin: 0;
+    }
+
+    .header-buttons {
+      border-radius: 15px;
+      color: white;
+      font-size: 20px;
+      padding: 8px;
+      border: 3px solid white;
+      margin-left: auto;
+      font-weight: bold;
+      background-color: #1abc9c;
+    }
+
+    .header-buttons:hover {
+      color: #1abc9c;
+      transition: 0.3s;
+      background-color: white;
+    }
+
+    .card {
+      border-radius: 25px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      transition: 0.3s;
+      width: 40%;
+      background-color: #ffffff;
+      margin: 50px auto;
+      padding-left: 30px;
+      padding-right: 50px;
+      padding-top: 15px;
+      padding-bottom: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: fit-content;
+      border-bottom: 10px solid #1abc9c;
+    }
+
+    .container {
+      width: 100%;
+    }
+
+    label {
+      display: block;
+      padding-bottom: 10px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 15px;
+    }
+
+    input,
+    label {
+      font-size: 19px;
+    }
+
+    input:focus {
+      outline: none;
+      border: 2px solid #1abc9c;
+      box-shadow: 0 0 5px rgba(26, 188, 156, 0.5);
+    }
+
+    h2 {
+      font-size: 30px;
+      color: #08463a;
+    }
+
+    #login-btn {
+      background-color: #1abc9c;
+      color: #bff5ea;
+      border: none;
+      outline: none;
+    }
+
+    #login-btn:focus {
+      outline: none;
+    }
+
+    #login-btn:hover {
+      transition: 0.3s;
+      background-color: #08463a;
+      color: #bff5ea;
+    }
+
+    .title {
+      display: flex;
+    }
+
+    .menu-btn {
+      visibility: hidden;
+    }
+
+    /* Large desktops */
+@media (min-width: 1200px) {
+    .card {
+        width: 40%;
+    }
+}
+
+/* Laptops */
+@media (max-width: 1199px) {
+    .card {
+        width: 55%;
+    }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+    .card {
+        width: 75%;
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
+    input,
+    label {
+        font-size: 17px;
+    }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+    .card {
+        width: 95%;
+        min-width: unset;
+        margin: 20px auto;
+        padding: 15px;
+    }
+
+    .header {
+        padding: 15px;
+    }
+
+    .header h1 {
+        font-size: 24px;
+    }
+
+    .header-buttons {
+        font-size: 16px;
+        padding: 6px 10px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    input,
+    label {
+        font-size: 16px;
+    }
+}
+  </style>
+</head>
+
+<body>
+
+  <div class="header">
+    <div class="title">
+      <button class="w3-bar-item w3-button w3-large menu-btn">
+        &#9776;
+      </button>
+      <h1>Header</h1>
+    </div>
+    <button class="header-buttons" onclick="window.location.href='index.html'">
+      Home
+    </button>
+  </div>
+
+  <div class="card">
+    <h2>
+      Welcome!
+    </h2>
+    <div class="container">
+      <form action="/action_page.php">
+        <label for="fname">Email</label>
+        <input type="text" id="email" name="email" placeholder="Enter Email..">
+        <br><br><br>
+        <label for="lname">Password</label>
+        <input type="password" id="pword" name="password">
+        <br><br><br>
+        <input id="login-btn" type="submit" value="Submit">
+      </form>
+    </div>
+  </div>
+
+</body>
+
+</html>
