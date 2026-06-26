@@ -1,11 +1,28 @@
+const sidebar = document.getElementById("sidebar");
+const menuBtn = document.getElementById("menuBtn");
+const closeBtn = document.getElementById("closeBtn");
+const overlay = document.getElementById("overlay");
 
-const closeSideBa= document.getElementById('hide-sidebar')
-
-function w3_open() {
-  document.getElementById("mySidebar").style.display = "block";
+function openSidebar() {
+    sidebar.classList.add("show");
+    overlay.classList.add("show");
+    menuBtn.classList.add("hide");
 }
 
-function w3_close() {
-  document.getElementById("mySidebar").style.display = "none";
+function closeSidebar() {
+    sidebar.classList.remove("show");
+    overlay.classList.remove("show");
+    menuBtn.classList.remove("hide");
 }
 
+menuBtn.addEventListener("click", openSidebar);
+closeBtn.addEventListener("click", closeSidebar);
+overlay.addEventListener("click", closeSidebar);
+
+window.addEventListener("resize", () => {
+    if (window.innerWidth >= 768) {
+        sidebar.classList.remove("show");
+        overlay.classList.remove("show");
+        menuBtn.classList.remove("hide");
+    }
+});

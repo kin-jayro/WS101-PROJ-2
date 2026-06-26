@@ -1,237 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <title>Login Page</title>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barangay Portal | Login</title>
 
-    body {
-      margin: 0;
-      position: relative;
-      min-height: 100vh;
-    }
-
-    body::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-image: url("bg-login-img.jpg");
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-      opacity: 0.3;
-      z-index: -1;
-    }
-
-    .header {
-      background: #1abc9c;
-      color: white;
-      padding: 20px;
-      display: flex;
-      align-items: center;
-    }
-
-    .header h1 {
-      margin: 0;
-    }
-
-    .header-buttons {
-      border-radius: 15px;
-      color: white;
-      font-size: 20px;
-      padding: 8px;
-      border: 3px solid white;
-      margin-left: auto;
-      font-weight: bold;
-      background-color: #1abc9c;
-    }
-
-    .header-buttons:hover {
-      color: #1abc9c;
-      transition: 0.3s;
-      background-color: white;
-    }
-
-    .card {
-      border-radius: 25px;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-      transition: 0.3s;
-      width: 40%;
-      background-color: #ffffff;
-      margin: 50px auto;
-      padding-left: 30px;
-      padding-right: 50px;
-      padding-top: 15px;
-      padding-bottom: 25px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: fit-content;
-      border-bottom: 10px solid #1abc9c;
-    }
-
-    .container {
-      width: 100%;
-    }
-
-    label {
-      display: block;
-      padding-bottom: 10px;
-    }
-
-    input {
-      width: 100%;
-      padding: 10px;
-      border-radius: 15px;
-    }
-
-    input,
-    label {
-      font-size: 19px;
-    }
-
-    input:focus {
-      outline: none;
-      border: 2px solid #1abc9c;
-      box-shadow: 0 0 5px rgba(26, 188, 156, 0.5);
-    }
-
-    h2 {
-      font-size: 30px;
-      color: #08463a;
-    }
-
-    #login-btn {
-      background-color: #1abc9c;
-      color: #bff5ea;
-      border: none;
-      outline: none;
-    }
-
-    #login-btn:focus {
-      outline: none;
-    }
-
-    #login-btn:hover {
-      transition: 0.3s;
-      background-color: #08463a;
-      color: #bff5ea;
-    }
-
-    .title {
-      display: flex;
-    }
-
-    .menu-btn {
-      visibility: hidden;
-    }
-
-    /* Large desktops */
-@media (min-width: 1200px) {
-    .card {
-        width: 40%;
-    }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
-/* Laptops */
-@media (max-width: 1199px) {
-    .card {
-        width: 55%;
-    }
+body{
+    min-height:100vh;
+    position:relative;
+    display:flex;
+    flex-direction:column;
 }
 
-/* Tablets */
-@media (max-width: 768px) {
-    .card {
-        width: 75%;
-        padding: 20px;
-    }
-
-    h2 {
-        font-size: 26px;
-    }
-
-    input,
-    label {
-        font-size: 17px;
-    }
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+        linear-gradient(rgba(31,41,55,.65),rgba(31,41,55,.65)),
+        url("bg-login-img.jpg") center/cover no-repeat;
+    z-index:-1;
 }
 
-/* Mobile phones */
-@media (max-width: 480px) {
-    .card {
-        width: 95%;
-        min-width: unset;
-        margin: 20px auto;
-        padding: 15px;
-    }
+/* ================= HEADER ================= */
 
-    .header {
-        padding: 15px;
-    }
-
-    .header h1 {
-        font-size: 24px;
-    }
-
-    .header-buttons {
-        font-size: 16px;
-        padding: 6px 10px;
-    }
-
-    h2 {
-        font-size: 22px;
-    }
-
-    input,
-    label {
-        font-size: 16px;
-    }
+.header{
+    height:70px;
+    background:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 30px;
+    box-shadow:0 2px 8px rgba(0,0,0,.1);
 }
-  </style>
+
+.header h1{
+    color:#1f2937;
+    font-size:28px;
+}
+
+.header-buttons{
+    background:#1f2937;
+    color:#fff;
+    border:none;
+    padding:10px 20px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.header-buttons:hover{
+    background:#374151;
+}
+
+/* ================= LOGIN CARD ================= */
+
+.container{
+    flex:1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:30px;
+}
+
+.card{
+    width:420px;
+    max-width:100%;
+    background:#fff;
+    border-radius:18px;
+    padding:35px;
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+
+.card h2{
+    text-align:center;
+    color:#1f2937;
+    margin-bottom:10px;
+    font-size:32px;
+}
+
+.subtitle{
+    text-align:center;
+    color:#6b7280;
+    margin-bottom:30px;
+}
+
+label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:bold;
+    color:#374151;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    border:1px solid #d1d5db;
+    border-radius:10px;
+    font-size:16px;
+    margin-bottom:20px;
+}
+
+input:focus{
+    outline:none;
+    border-color:#2563eb;
+    box-shadow:0 0 5px rgba(37,99,235,.35);
+}
+
+#login-btn{
+    width:100%;
+    padding:13px;
+    border:none;
+    border-radius:10px;
+    background:#2563eb;
+    color:#fff;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+#login-btn:hover{
+    background:#1d4ed8;
+}
+
+.register-text{
+    margin-top:20px;
+    text-align:center;
+    color:#6b7280;
+}
+
+.register-text a{
+    text-decoration:none;
+    color:#2563eb;
+    font-weight:bold;
+}
+
+.register-text a:hover{
+    text-decoration:underline;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width:768px){
+
+    .header{
+        padding:0 15px;
+    }
+
+    .header h1{
+        font-size:22px;
+    }
+
+    .header-buttons{
+        padding:8px 15px;
+        font-size:14px;
+    }
+
+    .card{
+        padding:25px;
+    }
+
+    .card h2{
+        font-size:28px;
+    }
+
+}
+
+@media (max-width:480px){
+
+    .container{
+        padding:15px;
+    }
+
+    .card{
+        padding:20px;
+        border-radius:15px;
+    }
+
+    .card h2{
+        font-size:24px;
+    }
+
+    .subtitle{
+        font-size:14px;
+    }
+
+}
+</style>
 </head>
 
 <body>
 
-  <div class="header">
-    <div class="title">
-      <button class="w3-bar-item w3-button w3-large menu-btn">
-        &#9776;
-      </button>
-      <h1>Header</h1>
-    </div>
-    <button class="header-buttons" onclick="window.location.href='index.html'">
-      Home
-    </button>
-  </div>
+<header class="header">
+    <h1>Barangay Portal</h1>
 
-  <div class="card">
-    <h2>
-      Welcome!
-    </h2>
-    <div class="container">
-      <form action="/action_page.php">
-        <label for="fname">Email</label>
-        <input type="text" id="email" name="email" placeholder="Enter Email..">
-        <br><br><br>
-        <label for="lname">Password</label>
-        <input type="password" id="pword" name="password">
-        <br><br><br>
-        <input id="login-btn" type="submit" value="Submit">
-      </form>
+    <button class="header-buttons"
+        onclick="window.location.href='index.html'">
+        Home
+    </button>
+</header>
+
+<div class="container">
+
+    <div class="card">
+
+        <h2>Welcome Back!</h2>
+
+        <p class="subtitle">
+            Sign in to access the Barangay Management Portal.
+        </p>
+
+        <form>
+
+            <label>Email</label>
+            <input
+                type="email"
+                placeholder="Enter your email"
+                required>
+
+            <label>Password</label>
+            <input
+                type="password"
+                placeholder="Enter your password"
+                required>
+
+            <button id="login-btn" type="submit">
+                Sign In
+            </button>
+
+        </form>
+
+        <p class="register-text">
+            Don't have an account?
+            <a href="#">Register Here</a>
+        </p>
+
     </div>
-  </div>
+
+</div>
 
 </body>
-
 </html>

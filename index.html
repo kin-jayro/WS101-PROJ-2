@@ -3,87 +3,77 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-        }
-
-        body {
-            position: relative;
-            min-height: 100vh;
-        }
-
-        .header {
-            background: #1abc9c;
-            color: white;
-            padding: 20px;
-            display: flex;
-            align-items: center;
-        }
-
-        .header h1 {
-            margin: 0;
-        }
-
-        .title {
-            display: flex;
-        }
-
-        .header-buttons {
-            border-radius: 15px;
-            color: white;
-            font-size: 20px;
-            padding: 8px;
-            border: 3px solid white;
-            margin-left: auto;
-            font-weight: bold;
-            background-color: #1abc9c;
-        }
-
-        .header-buttons:hover {
-            color: #1abc9c;
-            transition: 0.3s;
-            background-color: white;
-        }
-
-@media (min-width: 1200px) {
-    
-}
-
-/* Laptops */
-@media (max-width: 1199px) {
-
-}
-
-/* Mobile phones */
-@media (max-width: 480px) {
-
-}
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Sidebar</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
-    <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="width:200px;" id="mySidebar">
-        <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close &times;</button>
-        <a href="#" class="w3-bar-item w3-button">Announcements</a>
-        <a href="#" class="w3-bar-item w3-button">Feedbacks and Surveys</a>
-        <a href="#" class="w3-bar-item w3-button">Budget and Asset Inventory</a>
-        <a href="#" class="w3-bar-item w3-button">Docs</a>
-        <a href="#" class="w3-bar-item w3-button">Blotter Records</a>
-    </div>
-    <div class="header">
-        <div class="title">
-            <button class="w3-bar-item w3-button w3-large" onclick="w3_open()">&#9776;</button>
-            <h1>Header</h1>
-        </div>
-        <button class="header-buttons" onclick="window.location.href='login.html'">
-            Login
-        </button>
-    </div>
 
+    <!-- Sidebar Toggle -->
+    <button id="menuBtn" class="menu-btn">&#9776;</button>
+
+    <!-- Overlay -->
+    <div id="overlay" class="overlay"></div>
+
+    <!-- Sidebar -->
+    <aside id="sidebar" class="sidebar">
+
+        <button id="closeBtn" class="close-btn">&times;</button>
+
+        <h2>Logo</h2>
+
+        <ul class="sidebar-menu">
+            <li>
+                <a href="#" class="active">
+                    <span>📢</span> Announcements & News Feed
+                </a>
+            </li>
+
+            <li><a href="#"><span>📝</span> Feedback & Surveys</a></li>
+            <li><a href="#"><span>👥</span> Directory of Officials</a></li>
+            <li><a href="#"><span>💰</span> Budget & Asset Inventory</a></li>
+            <li><a href="#"><span>📂</span> Documents</a></li>
+            <li><a href="#"><span>📖</span> Blotter</a></li>
+        </ul>
+
+    </aside>
+
+    <!-- Main Area -->
+    <div class="main">
+
+
+            <header class="header">
+
+                <h1>Dashboard</h1>
+
+                <!-- Logged In -->
+                <div id="loggedInUser" class="header-right">
+                    <span>Welcome, User</span>
+                    <img src="https://via.placeholder.com/40" alt="Profile">
+
+                    <button id="logoutBtn" class="logout-btn">
+                        Logout
+                    </button>
+                </div>
+
+                <!-- Guest (Hidden by default) -->
+                <div id="guestUser" class="header-right" style="display:none;">
+                    <button class="login-btn">Login</button>
+                    <button class="register-btn">Register</button>
+                </div>
+
+            </header>
+        <!-- Content -->
+        <main class="content">
+            <h2>Responsive Sidebar</h2>
+
+            <p>
+                Resize the browser window to see the sidebar behavior.
+            </p>
+        </main>
+
+    </div>
 
     <script src="index.js"></script>
 
