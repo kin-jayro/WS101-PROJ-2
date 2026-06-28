@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barangay Dashboard</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+    <button id="menuBtn" class="menu-btn">&#9776;</button>
+
+    <div id="overlay" class="overlay"></div>
+
+    <aside id="sidebar" class="sidebar">
+        <button id="closeBtn" class="close-btn">&times;</button>
+        <h2>Logo</h2>
+        <ul class="sidebar-menu">
+            <li>
+                <a href="dashboard.html" class="active">
+                    <span>📢</span> Dashboard
+                </a>
+            </li>
+            <li><a href="#"><span>📝</span> Barangay Information </a></li>
+            <li><a href="#"><span>👥</span> Barangay Officials </a></li>
+            <li><a href="blotter.html"><span>📖</span> Blotter</a></li>
+            <li><a href="#"><span>📂</span> Chat Support </a></li>
+        </ul>
+    </aside>
+
+    <div class="main">
+
+        <header class="header">
+
+            <h1>Dashboard</h1>
+
+            <!-- Logged In -->
+            <div id="loggedInUser" class="header-right">
+                <span>Welcome, User</span>
+                <img src="" alt="Profile">
+
+                <button id="logoutBtn" class="logout-btn">
+                    Logout
+                </button>
+            </div>
+
+            <!-- Guest (Hidden by default) -->
+            <div id="guestUser" class="header-right" style="display:none;">
+                <button class="login-btn">Login</button>
+            </div>
+
+        </header>
+
+        <main class="content">
+
+            <div class="dashboard-grid">
+                <div class="stat-card-solid card-pop">
+                    <div class="stat-icon-white">👥</div>
+                    <div class="stat-details-solid">
+                        <h3>Total Population</h3>
+                        <p class="stat-number-large">4,250</p>
+                        <span class="stat-subtext-white">Current Registered Residents</span>
+                    </div>
+                </div>
+
+                <div class="stat-card-solid card-male">
+                    <div class="stat-icon-white">👨</div>
+                    <div class="stat-details-solid">
+                        <h3>Total Male</h3>
+                        <p class="stat-number-large">2,100</p>
+                        <span class="stat-subtext-white">49% Male Base</span>
+                    </div>
+                </div>
+
+                <div class="stat-card-solid card-female">
+                    <div class="stat-icon-white">👩</div>
+                    <div class="stat-details-solid">
+                        <h3>Total Female</h3>
+                        <p class="stat-number-large">2,150</p>
+                        <span class="stat-subtext-white">51% Female Base</span>
+                    </div>
+                </div>
+
+                <div class="stat-card-solid card-voters">
+                    <div class="stat-icon-white">🗳️</div>
+                    <div class="stat-details-solid">
+                        <h3>Registered Voters</h3>
+                        <p class="stat-number-large">2,890</p>
+                        <span class="stat-subtext-white">68% Voter Turnout Base</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feed-three-column-grid">
+                
+                <div class="scrollable-feed-card">
+                    <div class="feed-header bg-announcements">
+                        <h3>📢 Announcements</h3>
+                    </div>
+                    <div class="scrollable-list">
+                        <div class="feed-item urgent">
+                            <span class="feed-date">June 28, 2026</span>
+                            <h4>Emergency Water Outage Alert</h4>
+                            <p>PrimeWater announced a temporary water interruption on June 29, from 1:00 PM to 5:00 PM due to pipeline maintenance.</p>
+                        </div>
+                        <div class="feed-item">
+                            <span class="feed-date">June 25, 2026</span>
+                            <h4>Distribution of Senior Citizen Allowance</h4>
+                            <p>Quarterly allowances will be distributed tomorrow at the Barangay Hall starting at 8:00 AM. Bring your senior ID card.</p>
+                        </div>
+                        <div class="feed-item">
+                            <span class="feed-date">June 20, 2026</span>
+                            <h4>Curfew Hour Enforcement Reminder</h4>
+                            <p>Strict implementation of the 10:00 PM curfew for minors is still active throughout the community zones.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scrollable-feed-card">
+                    <div class="feed-header bg-news">
+                        <h3>📰 Local News</h3>
+                    </div>
+                    <div class="scrollable-list">
+                        <div class="feed-item">
+                            <span class="feed-date">June 27, 2026</span>
+                            <h4>Barangay Clean-Up Success</h4>
+                            <p>Over 80 residents joined the local plastic segregation campaign this morning. Thank you for keeping our streets green!</p>
+                        </div>
+                        <div class="feed-item">
+                            <span class="feed-date">June 22, 2026</span>
+                            <h4>New Solar Lights Installed</h4>
+                            <p>Ten new solar-powered lamp posts have been installed along the dark pathways of Purok 4 to help keep commuters safe.</p>
+                        </div>
+                        <div class="feed-item">
+                            <span class="feed-date">June 15, 2026</span>
+                            <h4>Youth Sports Clinic Launch</h4>
+                            <p>The SK Council successfully launched its basketball training workshop with over 50 kids participating.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scrollable-feed-card">
+                    <div class="feed-header bg-events">
+                        <h3>📅 Upcoming Events</h3>
+                    </div>
+                    <div class="scrollable-list">
+                        <div class="feed-item event-item">
+                            <span class="feed-date">July 04, 2026</span>
+                            <h4>General Assembly Meeting</h4>
+                            <p><strong>Time:</strong> 9:00 AM<br><strong>Location:</strong> Main Covered Court.</p>
+                        </div>
+                        <div class="feed-item event-item">
+                            <span class="feed-date">July 11, 2026</span>
+                            <h4>Free Medical & Dental Mission</h4>
+                            <p><strong>Time:</strong> 8:00 AM - 3:00 PM<br><strong>Location:</strong> Health Center.</p>
+                        </div>
+                        <div class="feed-item event-item">
+                            <span class="feed-date">July 18, 2026</span>
+                            <h4>SK Tree Planting Activity</h4>
+                            <p><strong>Time:</strong> 6:00 AM<br><strong>Location:</strong> Eco-Trail Zone.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
