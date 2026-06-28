@@ -1,0 +1,216 @@
+/* Split Layout Container Grid System */
+.officials-layout-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 100%;
+    height: 100%;
+    align-items: flex-start;
+    box-sizing: border-box;
+}
+
+/* ================= Left Side Card Style (Captain Showcase) ================= */
+.captain-preview-card {
+    width: 260px;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-top: 3px solid #0284c7; /* Highlight line marker matching layout mock */
+    border-radius: 4px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+
+.captain-header-tab {
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #475569;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.captain-body {
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.captain-avatar-box img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    background: #f8fafc;
+}
+
+.captain-body h2 {
+    font-size: 16px;
+    color: #1e293b;
+    margin: 0 0 20px 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+.preview-details-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.preview-details-list .p-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 13px;
+    color: #475569;
+}
+
+.preview-details-list .p-row:last-child {
+    border-bottom: none;
+}
+
+.preview-details-list .p-row strong {
+    color: #000000;
+}
+
+.status-active {
+    color: #16a34a !important;
+}
+
+/* ================= Right Side Grid System (All Cards Viewable) ================= */
+.officials-grid-zone {
+    flex: 1;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.officials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Official Card Base */
+.official-card {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e2e8f0;
+    box-sizing: border-box;
+}
+
+/* Colors background setups */
+.official-card.color-blue .card-header { background-color: #007bff; }
+.official-card.color-teal .card-header { background-color: #17a2b8; }
+.official-card.color-red .card-header { background-color: #dc3545; }
+.official-card.color-yellow .card-header { background-color: #ffc107; }
+.official-card.color-gray .card-header { background-color: #6c757d; }
+
+/* Expanded spacing parameters inside header band */
+.card-header {
+    padding: 18px 12px 36px 12px; /* Bottom padding gives space to text roles */
+    text-align: center;
+    color: #ffffff;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+
+.card-header h3 {
+    margin: 0 0 4px 0;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* Roles text styles kept visible cleanly */
+.role-text {
+    margin: 0;
+    font-size: 12px;
+    opacity: 0.9;
+}
+
+.card-body {
+    padding: 0 15px 15px 15px;
+    background: #ffffff;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Adjusted to -16px so the picture frame drops clear of the role labels above it */
+.avatar-container {
+    position: relative;
+    margin-top: -16px; 
+    margin-bottom: 12px;
+    z-index: 5;
+}
+
+.avatar-container img {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    background: #f8fafc;
+}
+
+.card-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 5px;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 10px;
+}
+
+.card-actions > div {
+    text-align: center;
+    font-size: 11px;
+    color: #64748b;
+    flex: 1;
+}
+
+.card-actions strong {
+    color: #1e293b;
+    font-size: 13px;
+    display: block;
+}
+
+.view-btn {
+    background: transparent;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 2px;
+}
+
+.dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 4px;
+}
+.dot-green { background-color: #28a745; }
+.dot-red { background-color: #dc3545; }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .officials-layout-container {
+        flex-direction: column;
+    }
+    .captain-preview-card {
+        width: 100%;
+    }
+}

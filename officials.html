@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barangay Officials</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="officials.css">
+</head>
+<body>
+
+    <button id="menuBtn" class="menu-btn">&#9776;</button>
+    <div id="overlay" class="overlay"></div>
+
+    <aside id="sidebar" class="sidebar">
+        <button id="closeBtn" class="close-btn">&times;</button>
+        <h2>Logo</h2>
+        <ul class="sidebar-menu">
+            <li><a href="dashboard.html"><span>📢</span> Dashboard</a></li>
+            <li><a href="information.html"><span>📝</span> Barangay Information</a></li>
+            <li><a href="officials.html" class="active"><span>👥</span> Barangay Officials</a></li>
+            <li><a href="blotter.html"><span>📖</span> Blotter</a></li>
+            <li><a href="#"><span>📂</span> Chat Support</a></li>
+        </ul>
+    </aside>
+
+    <div class="main">
+        <header class="header">
+            <div class="header-left">
+                <h1>Barangay Official</h1>
+            </div>
+            <div id="loggedInUser" class="header-right">
+                <span>Welcome, User</span>
+                <img src="Samp.jpg" alt="Profile">
+                <button id="logoutBtn" class="logout-btn">Logout</button>
+            </div>
+        </header>
+
+        <main class="content">
+            <div class="officials-layout-container">
+                
+                <div class="captain-preview-card" id="captainPreviewWindow">
+                    <div class="captain-header-tab">Captain</div>
+                    <div class="captain-body">
+                        <div class="captain-avatar-box">
+                            <img src="Samp.jpg" alt="Captain Profile">
+                        </div>
+                        <h2>Kean, Trillanes</h2>
+                        
+                        <div class="preview-details-list">
+                            <div class="p-row"><span>📅 Age</span><strong>21</strong></div>
+                            <div class="p-row"><span>👫 Gender</span><strong>Male</strong></div>
+                            <div class="p-row"><span>💍 Civil Status</span><strong>Single</strong></div>
+                            <div class="p-row"><span>🎂 Birth Date</span><strong>Feb 02, 2004</strong></div>
+                            <div class="p-row"><span>📞 Contact</span><strong>+63 123456789</strong></div>
+                            <div class="p-row"><span>⏳ Term</span><strong>2018-2020</strong></div>
+                            <div class="p-row"><span>💡 Status</span><strong class="status-active">🟢 Active</strong></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="officials-grid-zone">
+                    <div class="officials-grid">
+                        
+                        <div class="official-card color-teal">
+                            <div class="card-header">
+                                <h3>Marc, Latiza</h3>
+                                <p class="role-text">Kagawad</p>
+                            </div>
+                            <div class="card-body">
+                                <div class="avatar-container">
+                                    <img src="Samp.jpg">
+                                </div>
+                                <div class="card-actions">
+                                    <div><span class="dot dot-red"></span>Status</div>
+                                    <div><strong>21</strong>Age</div>
+                                    <div><button class="view-btn">👁️</button><br>View</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="official-card color-blue">
+                            <div class="card-header">
+                                <h3>Kaye, Tleon</h3>
+                                <p class="role-text">Secretary</p>
+                            </div>
+                            <div class="card-body">
+                                <div class="avatar-container">
+                                    <img src="Samp.jpg">
+                                </div>
+                                <div class="card-actions">
+                                    <div><span class="dot dot-green"></span>Status</div>
+                                    <div><strong>51</strong>Age</div>
+                                    <div><button class="view-btn">👁️</button><br>View</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="official-card color-gray">
+                            <div class="card-header">
+                                <h3>Laurence, Mendoza</h3>
+                                <p class="role-text">Member</p>
+                            </div>
+                            <div class="card-body">
+                                <div class="avatar-container">
+                                    <img src="Samp.jpg">
+                                </div>
+                                <div class="card-actions">
+                                    <div><span class="dot dot-green"></span>Status</div>
+                                    <div><strong>20</strong>Age</div>
+                                    <div><button class="view-btn">👁️</button><br>View</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="official-card color-red">
+                            <div class="card-header">
+                                <h3>Jed, Dimaano</h3>
+                                <p class="role-text">Chairperson</p>
+                            </div>
+                            <div class="card-body">
+                                <div class="avatar-container">
+                                    <img src="Samp.jpg">
+                                </div>
+                                <div class="card-actions">
+                                    <div><span class="dot dot-green"></span>Status</div>
+                                    <div><strong>45</strong>Age</div>
+                                    <div><button class="view-btn">👁️</button><br>View</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
