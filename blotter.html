@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Sidebar</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="blotter.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/blotter.css">
 </head>
 
 <body>
@@ -25,7 +25,7 @@
         <h2>Logo</h2>
 
         <ul class="sidebar-menu">
-            <li><a href="#"><span>📢</span> Announcements & News Feed</a></li>
+            <li><a href="index.html"><span>📢</span> Announcements & News Feed</a></li>
             <li><a href="#"><span>📝</span> Feedback & Surveys</a></li>
             <li><a href="#"><span>👥</span> Directory of Officials</a></li>
             <li><a href="#"><span>💰</span> Budget & Asset Inventory</a></li>
@@ -50,7 +50,7 @@
             <!-- Logged In -->
             <div id="loggedInUser" class="header-right">
                 <span>Welcome, User</span>
-                <img src="https://via.placeholder.com/40" alt="Profile">
+                <img src="" alt="Profile">
 
                 <button id="logoutBtn" class="logout-btn">
                     Logout
@@ -60,7 +60,6 @@
             <!-- Guest (Hidden by default) -->
             <div id="guestUser" class="header-right" style="display:none;">
                 <button class="login-btn">Login</button>
-                <button class="register-btn">Register</button>
             </div>
 
         </header>
@@ -69,7 +68,7 @@
             <div class="page-header">
                 <h2>Barangay Blotter</h2>
 
-                <button class="add-btn" id="add-btn">
+                <button class="add-btn" id="add-blotter-btn">
                     + New Blotter Record
                 </button>
             </div>
@@ -90,7 +89,6 @@
                 </div>
 
                 <table>
-
                     <thead>
                         <tr>
                             <th>Blotter No.</th>
@@ -103,47 +101,16 @@
                         </tr>
                     </thead>
 
-                    <tbody>
+                    <tbody id="blotter-data">
 
-                        <tr>
-                            <td>BLT-001</td>
-                            <td>Aug. 15, 2025</td>
-                            <td>Juan Dela Cruz</td>
-                            <td>Pedro Santos</td>
-                            <td>Noise Complaint</td>
-                            <td><span class="status open">Open</span></td>
-                            <td>
-                                <button class="view-btn">View</button>
-                            </td>
-                        </tr>
 
-                        <tr>
-                            <td>BLT-002</td>
-                            <td>Aug. 14, 2025</td>
-                            <td>Maria Cruz</td>
-                            <td>Jose Reyes</td>
-                            <td>Boundary Dispute</td>
-                            <td><span class="status settled">Settled</span></td>
-                            <td>
-                                <button class="view-btn">View</button>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>BLT-003</td>
-                            <td>Aug. 12, 2025</td>
-                            <td>Anna Lopez</td>
-                            <td>Mark Flores</td>
-                            <td>Verbal Altercation</td>
-                            <td><span class="status pending">Pending</span></td>
-                            <td>
-                                <button class="view-btn">View</button>
-                            </td>
-                        </tr>
 
                     </tbody>
 
                 </table>
+
+
+
 
             </div>
 
@@ -215,38 +182,53 @@
 
                 <div class="section">
 
-                    <h3>👤 Complainant</h3>
+                    <div style="display:flex;justify-content:space-between;align-items:center;">
+                        <h3>👤 Complainant(s)</h3>
 
-                    <div class="grid">
+                        <button type="button" id="addComplainant">
+                            + Add Complainant
+                        </button>
+                    </div>
 
-                        <div>
-                            <label>Full Name <span class="required">*</span></label>
-                            <input type="text" required>
-                        </div>
+                    <div id="complainantContainer">
 
-                        <div>
-                            <label>Age <span class="required">*</span></label>
-                            <input type="number" min="1" max="120" required>
-                        </div>
+                        <!-- First Complainant -->
+                        <div class="complainant-item">
 
-                        <div>
-                            <label>Sex <span class="required">*</span></label>
+                            <div class="grid">
 
-                            <select required>
-                                <option value="">Select</option>
-                                <option>Male</option>
-                                <option>Female</option>
-                            </select>
-                        </div>
+                                <div>
+                                    <label>Full Name <span class="required">*</span></label>
+                                    <input type="text" name="complainant_name[]" required>
+                                </div>
 
-                        <div>
-                            <label>Contact Number</label>
-                            <input type="tel" pattern="[0-9]{11}" placeholder="09XXXXXXXXX">
-                        </div>
+                                <div>
+                                    <label>Age <span class="required">*</span></label>
+                                    <input type="number" name="complainant_age[]" min="1" max="120" required>
+                                </div>
 
-                        <div class="full">
-                            <label>Address <span class="required">*</span></label>
-                            <input type="text" required>
+                                <div>
+                                    <label>Sex <span class="required">*</span></label>
+                                    <select name="complainant_sex[]" required>
+                                        <option value="">Select</option>
+                                        <option>Male</option>
+                                        <option>Female</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label>Contact Number</label>
+                                    <input type="tel" name="complainant_contact[]" pattern="[0-9]{11}"
+                                        placeholder="09XXXXXXXXX">
+                                </div>
+
+                                <div class="full">
+                                    <label>Address <span class="required">*</span></label>
+                                    <input type="text" name="complainant_address[]" required>
+                                </div>
+
+                            </div>
+
                         </div>
 
                     </div>
@@ -264,31 +246,6 @@
                         <div>
                             <label>Full Name <span class="required">*</span></label>
                             <input type="text" required>
-                        </div>
-
-                        <div>
-                            <label>Age</label>
-                            <input type="number" min="1" max="120">
-                        </div>
-
-                        <div>
-                            <label>Sex</label>
-
-                            <select>
-                                <option value="">Select</option>
-                                <option>Male</option>
-                                <option>Female</option>
-                            </select>
-                        </div>
-
-                        <div>
-                            <label>Contact Number</label>
-                            <input type="tel" pattern="[0-9]{11}" placeholder="09XXXXXXXXX">
-                        </div>
-
-                        <div class="full">
-                            <label>Address</label>
-                            <input type="text">
                         </div>
 
                     </div>
@@ -312,8 +269,10 @@
         </div>
 
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-    <script src="blotter.js"></script>
+    <script src="js/supabase.js"></script>
+    <script src="js/blotter.js"></script>
 
 </body>
 
